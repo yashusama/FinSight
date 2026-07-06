@@ -1,0 +1,509 @@
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f8ff;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar {
+    width: 260px;
+    background: #1e3a8a;
+    color: white;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.logo h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .85);
+    padding: 14px 18px;
+    border-radius: 12px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.sidebar nav a:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+.sidebar nav a.active {
+    background: white;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ===========================
+   MAIN
+=========================== */
+
+.main-content {
+    flex: 1;
+    padding: 35px 40px;
+}
+
+/* ===========================
+   TOPBAR
+=========================== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    font-size: 42px;
+    color: #111827;
+}
+
+.topbar p {
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.profile span {
+    font-weight: 600;
+    color: #374151;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+.dashboard-body {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .06);
+}
+
+/* ===========================
+   SUMMARY
+=========================== */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.summary-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    transition: .3s;
+}
+
+.summary-card:hover {
+    transform: translateY(-6px);
+}
+
+.summary-card h4 {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.summary-card h2 {
+    font-size: 38px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.positive {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.negative {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.neutral {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/* ===========================
+   SECOND ROW
+=========================== */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   COMMON CARD
+=========================== */
+
+.chart-card,
+.category-card,
+.transactions-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.card-header h3 {
+    font-size: 24px;
+    color: #111827;
+}
+
+.card-header span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ===========================
+   DYNAMIC CHART
+=========================== */
+
+.chart-legend {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.income-dot {
+    background: #2563eb;
+}
+
+.expense-dot {
+    background: #93c5fd;
+}
+
+.chart-area {
+    height: 250px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.chart-bars {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.chart-group {
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 55px;
+}
+
+.chart-values {
+    height: 155px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 7px;
+}
+
+.chart-group p {
+    margin-top: 12px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.income,
+.expense {
+    width: 18px;
+    border-radius: 8px 8px 4px 4px;
+}
+
+.income {
+    background: #2563eb;
+    margin-bottom: 0;
+}
+
+.expense {
+    background: #93c5fd;
+}
+
+.dynamic-bar {
+    min-height: 0;
+    transition:
+        height .4s ease,
+        transform .2s ease;
+}
+
+.dynamic-bar:hover {
+    transform: scaleX(1.12);
+}
+
+/* ===========================
+   CATEGORY
+=========================== */
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 16px;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.transactions-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-card th {
+    text-align: left;
+    color: #6b7280;
+    padding-bottom: 18px;
+    font-size: 15px;
+}
+
+.transactions-card td {
+    padding: 18px 0;
+    border-top: 1px solid #edf2f7;
+    color: #374151;
+    font-size: 15px;
+}
+
+.dashboard-empty-row {
+    text-align: center;
+    padding: 20px !important;
+    color: #6b7280 !important;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width: 1200px) {
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 950px) {
+
+    .sidebar {
+        width: 90px;
+        padding: 30px 12px;
+    }
+
+    .logo h2 {
+        display: none;
+    }
+
+    .sidebar nav a {
+        text-align: center;
+        padding: 15px 0;
+        font-size: 13px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}
+
+@media(max-width: 700px) {
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transactions-card {
+        overflow-x: auto;
+    }
+
+    .transactions-card table {
+        min-width: 650px;
+    }
+
+    .chart-card {
+        overflow-x: auto;
+    }
+
+    .chart-bars {
+        min-width: 520px;
+    }
+
+}
+
+.add-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s;
+    margin-right: 18px;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.logout-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: .3s;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+/* ===========================
+   CLICKABLE APP LOGO
+=========================== */
+
+.app-logo-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.app-logo-link h2 {
+    color: white;
+}
+
+.app-logo-link:hover {
+    opacity: .9;
+}
+
+/* ===========================
+   DASHBOARD LOAD / ERROR STATE
+=========================== */
+
+.dashboard-status-state {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.dashboard-status-state h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 24px;
+}
+
+.dashboard-status-state p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.dashboard-error-state h3 {
+    color: #dc2626;
+}
+
+.dashboard-retry-btn {
+    margin-top: 8px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.dashboard-retry-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}

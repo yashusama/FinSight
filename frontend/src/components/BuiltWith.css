@@ -1,0 +1,41 @@
+.built-with{
+    padding:80px;
+    text-align:center;
+}
+
+.built-with h2{
+    font-size:38px;
+    color:var(--text);
+    margin-bottom:50px;
+}
+
+.tech-grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.tech-card{
+    width:180px;
+    padding:30px 20px;
+    background:white;
+    border-radius:20px;
+    box-shadow:var(--shadow-md);
+    transition:var(--transition);
+    cursor:pointer;
+}
+
+.tech-card:hover{
+    transform:translateY(-8px);
+}
+
+.tech-card{
+    font-size:45px;
+}
+
+.tech-card h3{
+    margin-top:15px;
+    font-size:20px;
+    color:var(--text);
+}
