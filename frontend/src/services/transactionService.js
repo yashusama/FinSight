@@ -1,18 +1,14 @@
 import axios from "axios";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:5000/api";
-
 const API_URL =
-  `${API_BASE_URL}/transactions`;
+  import.meta.env.VITE_API_URL;
 
 export const getTransactions = async () => {
   const token =
     localStorage.getItem("token");
 
   const response = await axios.get(
-    API_URL,
+    `${API_URL}/transactions`,
     {
       headers: {
         Authorization: token,
@@ -30,7 +26,7 @@ export const createTransaction = async (
     localStorage.getItem("token");
 
   const response = await axios.post(
-    API_URL,
+    `${API_URL}/transactions`,
     transactionData,
     {
       headers: {
@@ -50,7 +46,7 @@ export const updateTransaction = async (
     localStorage.getItem("token");
 
   const response = await axios.put(
-    `${API_URL}/${id}`,
+    `${API_URL}/transactions/${id}`,
     transactionData,
     {
       headers: {
@@ -69,7 +65,7 @@ export const deleteTransaction = async (
     localStorage.getItem("token");
 
   const response = await axios.delete(
-    `${API_URL}/${id}`,
+    `${API_URL}/transactions/${id}`,
     {
       headers: {
         Authorization: token,
